@@ -1,9 +1,11 @@
 <%- include('./partials/head') %>
 
 <h2>Students</h2>
-<ul>
+<ul class="student">
   <% persons.forEach(person => { %>
-    <li><a href="./person/<%= person.id %>"><%= person.name %></a>, squad_id <%= person.squad_id %></li>
+    <li>
+      <a href="./person/<%= person.id %>"><%= person.name + " " + person.surname %></a>, squad_id <%= person.squad_id %>
+    </li>
   <% }) %>
 </ul>
 
