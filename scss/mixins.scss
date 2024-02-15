@@ -1,0 +1,108 @@
+@use "./variables.scss" as *;
+
+// -----------------------------------------------------------------------------
+//
+// Typography
+//
+// -----------------------------------------------------------------------------
+
+@mixin font-primary-light {
+  font-family: "Montserrat", sans-serif;
+  font-weight: var(--weight-medium);
+}
+
+@mixin font-primary-light {
+  font-family: "Montserrat", sans-serif;
+  font-weight: var(--weight-light);
+}
+
+@mixin font-secondary {
+  font-family: "Montserrat", sans-serif;
+  font-weight: var(--weight-light);
+}
+
+@mixin h1-font {
+  @include font-primary-light;
+  font-size: var(--h1-size);
+  line-height: var(--h1-line);
+  color: rgba(var(--color-fog));
+  margin-bottom: 2rem;
+}
+
+@mixin h2-font {
+  @include font-primary-light;
+  font-size: var(--h2-size);
+  line-height: var(--h2-line);
+  color: rgba(var(--color-fog));
+  margin-bottom: 2rem;
+}
+
+@mixin h3-font {
+  @include font-primary-light;
+  font-size: var(--h3-size);
+  line-height: var(--h3-line);
+  color: rgba(var(--color-fog));
+  margin-bottom: 2rem;
+}
+
+@mixin h4-font {
+  @include font-primary-light;
+  font-size: var(--h4-size);
+  line-height: var(--h4-line);
+  color: rgba(var(--color-fog));
+  margin-bottom: 2rem;
+}
+
+@mixin h5-font {
+  @include font-primary-light;
+  font-size: var(--h5-size);
+  line-height: var(--h5-line);
+  color: rgba(var(--color-fog));
+  margin-bottom: 2rem;
+}
+
+@mixin h6-font {
+  @include font-primary-light;
+  font-size: var(--h6-size);
+  line-height: var(--h6-line);
+  color: rgba(var(--color-fog));
+  margin-bottom: 2rem;
+}
+
+@mixin p-font {
+  @include font-secondary;
+  font-size: var(--p1-size);
+  line-height: var(--p1-line);
+  color: rgba(var(--color-fog));
+  margin-bottom: 1rem;
+}
+
+// -----------------------------------------------------------------------------
+//
+// other
+//
+// -----------------------------------------------------------------------------
+
+@mixin bg-gradient {
+  background: hsla(212, 35%, 58%, 1);
+
+  background: linear-gradient(
+    -80deg,
+    hsla(212, 35%, 58%, 1) 0%,
+    hsla(218, 32%, 80%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    -80deg,
+    hsla(212, 35%, 58%, 1) 0%,
+    hsla(218, 32%, 80%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    -80deg,
+    hsla(212, 35%, 58%, 1) 0%,
+    hsla(218, 32%, 80%, 1) 100%
+  );
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#6d90b9", endColorstr="#bbc7dc", GradientType=1 );
+}

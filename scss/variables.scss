@@ -1,0 +1,77 @@
+:root {
+    // text
+    --h1-size: 2.25rem;
+    --h1-line: 2.75rem;
+  
+    --h2-size: 2rem;
+    --h2-line: 2.5rem;
+  
+    --h3-size: 1.5rem;
+    --h3-line: 2rem;
+  
+    --h4-size: 1.25rem;
+    --h4-line: 1.5rem;
+  
+    --h5-size: 1rem;
+    --h5-line: 1.25rem;
+  
+    --h6-size: 1rem;
+    --h6-line: 1.25rem;
+  
+    --p1-size: 1rem;
+    --p1-line: 1.5rem;
+  
+    --weight-medium: 500;
+    --weight-light: 300;
+  
+    @media only screen and (min-width: 580px) {
+      --h1-size: 3.5rem;
+      --h1-line: 4rem;
+  
+      --h2-size: 2.5rem;
+      --h2-line: 3rem;
+  
+      --h3-size: 2rem;
+      --h3-line: 2.5rem;
+  
+      --h4-size: 1.5rem;
+      --h4-line: 2rem;
+  
+      --h5-size: 1.25rem;
+      --h5-line: 1.5rem;
+  
+      --h6-size: 1.125rem;
+      --h6-line: 1.5rem;
+    }
+  
+    @media only screen and (min-width: 1200px) {
+    --h1-size: calc(3.5rem * 1.125);
+    --h1-line: calc(4rem * 1.125);
+  
+    --h2-size: calc(2.5rem * 1.125);
+    --h2-line: calc(3rem * 1.125);
+  
+    --h3-size: calc(2rem * 1.125);
+    --h3-line: calc(2.5rem * 1.125);
+  
+    --h4-size: calc(1.5rem * 1.125);
+    --h4-line: calc(2rem * 1.125);
+  
+    --h5-size: calc(1.25rem * 1.125);
+    --h5-line: calc(1.5rem * 1.125);
+  
+    --h6-size: calc(1.125rem * 1.125);
+    --h6-line: calc(1.5rem * 1.125);
+  
+    --p1-size: calc(1rem * 1.125);
+    --p1-line: calc(1.5rem * 1.125);
+    }
+  
+    // temporary colors
+    --primary-color: #6D90B9;
+    --secondary-color: #BBC7DC;
+    --color-white: #fff;
+    --color-fog: 217, 217, 217;
+    --scrollbar-color: #727a9a;
+    --color-black: #000;
+}

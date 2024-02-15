@@ -1,0 +1,98 @@
+@use "mixins" as *;
+@use "variables" as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  & ::-webkit-scrollbar {
+    width: 0.35rem;
+  }
+
+  & ::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+  }
+
+  & ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+    border-radius: 2rem;
+  }
+
+  & ::-webkit-scrollbar-thumb:active {
+    background: var(--color-black);
+  }
+}
+
+h1 {
+  @include h1-font;
+}
+
+h2 {
+  @include h2-font;
+}
+
+h3 {
+  @include h3-font;
+}
+
+h4 {
+  @include h4-font;
+}
+
+h5 {
+  @include h5-font;
+}
+
+h6 {
+  @include h6-font;
+}
+
+p {
+    @include p-font;
+}
+
+body {
+  @include bg-gradient;
+  min-height: 100vh;
+}
+
+@media only screen and (min-width: 0px) {
+  head, main, footer {
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (min-width: 580px) {
+  head, main, footer {
+    padding: 0 6rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  head, main, footer {
+    padding: 0 3rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  head, main, footer {
+    padding: 0 10rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  head, main, footer {
+    padding: 0 10rem;
+  }
+}

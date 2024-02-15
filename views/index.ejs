@@ -4,7 +4,10 @@
 <ul class="student">
   <% persons.forEach(person => { %>
     <li>
-      <a href="./person/<%= person.id %>"><%= person.name + " " + person.surname %></a>, squad_id <%= person.squad_id %>
+      <a href="./person/<%= person.id %>">
+        <img src="<%= person.avatar%>" alt="">
+        <h3><%= person.name + " " + person.surname %></h3>
+      </a>
     </li>
   <% }) %>
 </ul>
