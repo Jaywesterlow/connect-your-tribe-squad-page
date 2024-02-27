@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --h1-size: 2.25rem;
   --h1-line: 2.75rem;
@@ -73,7 +73,7 @@ html {
   scroll-behavior: smooth;
 }
 html ::-webkit-scrollbar {
-  width: 0.35rem;
+  width: 1rem;
 }
 html ::-webkit-scrollbar-track {
   background: var(--secondary-color);
@@ -87,75 +87,75 @@ html ::-webkit-scrollbar-thumb:active {
 }
 
 h1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: var(--weight-light);
   font-size: var(--h1-size);
   line-height: var(--h1-line);
-  color: rgba(var(--color-fog));
+  color: var(--color-black);
   margin-bottom: 2rem;
 }
 
 h2 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: var(--weight-light);
   font-size: var(--h2-size);
   line-height: var(--h2-line);
-  color: rgba(var(--color-fog));
+  color: var(--color-black);
   margin-bottom: 2rem;
 }
 
 h3 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: var(--weight-light);
   font-size: var(--h3-size);
   line-height: var(--h3-line);
-  color: rgba(var(--color-fog));
+  color: var(--color-black);
   margin-bottom: 2rem;
 }
 
 h4 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: var(--weight-light);
   font-size: var(--h4-size);
   line-height: var(--h4-line);
-  color: rgba(var(--color-fog));
+  color: var(--color-black);
   margin-bottom: 2rem;
 }
 
 h5 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: var(--weight-light);
   font-size: var(--h5-size);
   line-height: var(--h5-line);
-  color: rgba(var(--color-fog));
+  color: var(--color-black);
   margin-bottom: 2rem;
 }
 
 h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: var(--weight-light);
   font-size: var(--h6-size);
   line-height: var(--h6-line);
-  color: rgba(var(--color-fog));
+  color: var(--color-black);
   margin-bottom: 2rem;
 }
 
 p {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: var(--weight-light);
   font-size: var(--p1-size);
   line-height: var(--p1-line);
-  color: rgba(var(--color-fog));
+  color: var(--color-black);
   margin-bottom: 1rem;
 }
 
 body {
-  background: #6e91b9;
-  background: linear-gradient(-80deg, #6e91b9 0%, #bcc8dc 100%);
-  background: -moz-linear-gradient(-80deg, #6e91b9 0%, #bcc8dc 100%);
-  background: -webkit-linear-gradient(-80deg, #6e91b9 0%, #bcc8dc 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#6d90b9", endColorstr="#bbc7dc", GradientType=1 );
+  background-color: #265893;
   min-height: 100vh;
+}
+
+main {
+  height: 100vh;
 }
 
 @media only screen and (min-width: 0px) {

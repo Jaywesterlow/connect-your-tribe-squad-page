@@ -1,22 +1,64 @@
 <%- include('./partials/head') %>
 
-<h2>Students</h2>
-<ul class="student">
-  <% persons.forEach(person => { %>
-    <li>
-      <img src="<%= person.avatar%>" alt="">
-      <h3><%= person.name + " " + person.surname %></h3>
-      <div style="display: flex; justify-content: space-between; gap: 2rem; min-width: 40%;">
-        <h4><%= "@" + person.nickname %></h4>
-        <h4>Squad <%= person.squad_id %></h4>
-      </div>
+<section>
+  <ul>
+    <li class="pikachu">
+      <article>
+        <h2>PIKACHU</h2>
+        <cite>GIDS</cite>
+        <p>
+          Pikachu is hier om je te helpen! Als je vragen 
+          stelt geeft hij je mentale steun terwijl je het 
+          zelf oplost. Je kunt volgens hem op de mascottes 
+          rechts klikken om de squad pages te bekijken
+        </p>
+      </article>
+      
   
-      <div style="display: flex; justify-content: space-around; gap: 1rem; min-width: 40%;">
-        <button>Projects</button>
-        <button class="alternate">About</button>
-      </div>
+      <img class="looped-img" src="../public/assets/pikachu.png" alt="Pika pi" />
+      <q class="background-name">PIKACHU</q>
+        
+      <nav>
+        <ul class="squad-selection">
+          <% squads.forEach(squad => { %>
+          <li>
+            <a>
+              <img src="" alt="" />
+              <!-- title text -->
+            </a>
+          </li>
+          <% }) %>
+        </ul>
+        <!-- pagination -->
+      </nav>
     </li>
-  <% }) %>
-</ul>
+  
+    <% squads.forEach(squad => { %>
+    <li>
+      <h2><%= squad.id %></h2>
+      <cite>cite</cite>
+      <p>paragraph</p>
+  
+      <img class="looped-img" src="" alt="" />
+      <q class="background-name">q tag</q>
+  
+      <nav>
+        <ul>
+          <% squads.forEach(squad => { %>
+          <li>
+            <a>
+              <img src="" alt="" />
+              <!-- title text -->
+            </a>
+          </li>
+          <% }) %>
+        </ul>
+        <!-- pagination -->
+      </nav>
+    </li>
+    <% }) %>
+  </ul>
+</section>
+
 
 <%- include('./partials/foot') %>

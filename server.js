@@ -1,14 +1,10 @@
-// Importeer het npm pakket express uit de node_modules map
-import express from 'express'
+//? Express setup ?//
 
 // Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from './helpers/fetch-json.js'
 
-// Stel het basis endpoint in
-const apiUrl = 'https://fdnd.directus.app/items'
-
-// Haal alle squads uit de WHOIS API op
-const squadData = await fetchJson(apiUrl + '/squad')
+// Importeer het npm pakket express uit de node_modules map
+import express from 'express'
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -22,10 +18,42 @@ app.set('views', './views')
 // Gebruik de map 'public' voor statische resources, zoals stylesheets, afbeeldingen en client-side JavaScript
 app.use(express.static('public'))
 
+// Stel het poortnummer in waar express op moet gaan luisteren
+app.set('port', process.env.PORT || 8000)
+
+// Start express op, haal daarbij het zojuist ingestelde poortnummer op
+app.listen(app.get('port'), function () {
+  // Toon een bericht in de console en geef het poortnummer door
+  console.log(`Application started on http://localhost:${app.get('port')}`)
+})
+
+//? PokéApi setup ?//
+
+// Stel het basis endpoint in
+const pokeAPI = 'https://pokeapi.co/api/v2'
+
+fetch(pokeAPI + "/pokemon")
+  .then(response => {
+    if (!response.ok){
+      throw new Error("Could not fetch resource");
+    }
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+//? Routes & Data ?//
+
+// Stel het basis endpoint in
+const whoisAPI = 'https://fdnd.directus.app/items'
+
+// Haal alle squads uit de WHOIS API op
+const squadData = await fetchJson(whoisAPI + '/squad/?filter={"tribe_id":1}')
+
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
   // Haal alle personen uit de WHOIS API op
-  fetchJson(apiUrl + '/person').then((apiData) => {
+  fetchJson(whoisAPI + '/person').then((apiData) => {
     // apiData bevat gegevens van alle personen uit alle squads
     // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
 
@@ -43,17 +71,8 @@ app.post('/', function (request, response) {
 // Maak een GET route voor een detailpagina met een request parameter id
 app.get('/person/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
-  fetchJson(apiUrl + '/person/' + request.params.id).then((apiData) => {
+  fetchJson(whoisAPI + '/person/' + request.params.id).then((apiData) => {
     // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
     response.render('person', {person: apiData.data, squads: squadData.data})
   })
-})
-
-// Stel het poortnummer in waar express op moet gaan luisteren
-app.set('port', process.env.PORT || 8000)
-
-// Start express op, haal daarbij het zojuist ingestelde poortnummer op
-app.listen(app.get('port'), function () {
-  // Toon een bericht in de console en geef het poortnummer door
-  console.log(`Application started on http://localhost:${app.get('port')}`)
 })
